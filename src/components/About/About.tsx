@@ -1,4 +1,4 @@
-import React from 'react'
+
 import plant1 from "../../assets/img/plant-1.png"
 import plant2 from "../../assets/img/plant-2.png"
 import leaf from "../../assets/img/leaf-3.png"

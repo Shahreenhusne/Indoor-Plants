@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import leaf1 from "../../assets/img/leaf-1.png"
 import leaf2 from "../../assets/img/leaf-2.png"
 const Navber = () => {
