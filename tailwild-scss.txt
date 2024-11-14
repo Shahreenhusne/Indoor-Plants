@@ -1,0 +1,31 @@
+1.Install SCSS in the Project: If you haven’t set up SCSS, install the required package:
+npm install sass
+
+2.Create index.scss File
+Inside your src folder, create an index.scss file.
+
+Import the Tailwind CSS directives and add any custom SCSS styles as needed.
+
+/* index.scss */
+
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+3.Update Tailwind Configuration
+In the tailwind.config.js file, make sure you configure Tailwind to watch for class names in both your React files and your SCSS files:
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}", // For React components
+    "./src/**/*.scss", // For SCSS files
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+4.Import index.scss in Your Main File
+In your main React file, such as index.js or App.js, import the index.scss file to apply both Tailwind CSS and your custom SCSS styles across the app:
+import './index.scss';
