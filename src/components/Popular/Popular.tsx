@@ -6,13 +6,13 @@ import Plant4 from "../../assets/img/cart-4.png"
 
 const Popular = () => {
   return (
-    <section id='popular' className='bg-green-900'>
+    <section id='popular' className='bg-green-900 p-10 md:p-20'>
            {/* part1 */}
-           <div className='flex flex-col items-center gap-3 text-center p-10 md:p-20'>
+           <div className='flex flex-col items-center gap-3 text-center pb-10 md:pb-20'>
                 <h2 className=' font-lobster text-yellow-500'>Your Choice Plant</h2>
                 <p className=' max-w-2xl'>Follow instruction for more</p>
            </div>
-           <div className='container w-full mt-20 grid grid-cols-1 gap-x-8 gap-y-36 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+           <div className='container w-full mt-20 grid grid-cols-1 gap-x-8 gap-y-36 md:grid-cols-2  xl:grid-cols-4'>
              {/* card1 */}
              <div className='card bg-green-950 p-10  pt-24 rounded-md relative'>
                 {/* card extra class for hover effect */}

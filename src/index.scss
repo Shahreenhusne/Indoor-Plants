@@ -8,6 +8,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+    @apply overflow-x-hidden scroll-smooth;
+}
+
 body{
     @apply bg-[#052e16] text-white font-jost tracking-wider; 
   
@@ -59,7 +63,7 @@ body{
 }
 
 // aboutUs page  and popular page
-#aboutUs, #popular {
+#aboutUs, #popular, #review, #footer{
     h2, h3 {
         @apply text-2xl md:text-4xl xl:text-5xl font-bold;
     }
@@ -68,3 +72,23 @@ body{
 .card:hover img {
     @apply -top-8
 }
+// swiper 
+.custom-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .custom-pagination .swiper-pagination-bullet {
+    background-color: #ccc;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-pagination .swiper-pagination-bullet-active {
+    background-color: #eab308;
+  }
+  

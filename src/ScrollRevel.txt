@@ -1,0 +1,37 @@
+
+first install it using npm 
+
+1. Create a Type Declaration File
+Create a custom TypeScript declaration file in your project, such as scrollreveal.d.ts. Place it in a folder like src/types or directly in the src directory.
+
+For example:
+
+bash
+Copy code
+src/types/scrollreveal.d.ts
+2. Add the Following Declaration
+ts
+Copy code
+declare module 'scrollreveal' {
+  const ScrollReveal: any;
+  export default ScrollReveal;
+}
+
+3. Use ScrollReveal Normally
+You can now import and use ScrollReveal without errors:
+
+tsx
+Copy code
+import ScrollReveal from 'scrollreveal';
+
+useEffect(() => {
+  const sr = ScrollReveal({
+    distance: '50px',
+    duration: 1000,
+    delay: 200,
+    reset: true,
+  });
+
+  sr.reveal('.reveal', { origin: 'bottom' });
+}, []); 
+check the home component

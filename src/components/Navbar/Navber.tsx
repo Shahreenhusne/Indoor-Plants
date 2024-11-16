@@ -1,14 +1,36 @@
-import  { useState } from 'react'
+import  { useEffect, useState } from 'react'
 import leaf1 from "../../assets/img/leaf-1.png"
 import leaf2 from "../../assets/img/leaf-2.png"
 const Navber = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    
+     useEffect(() => {
+    
+    const handleScrollBtn= () => {
+       // Show button if scrolled down 100px or more
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      } 
+      else {
+        setIsVisible(false);
+      }
+
+    }
+
+      window.addEventListener('scroll', handleScrollBtn);
+
+    // Cleanup the event listener
+    return () => window.removeEventListener('scroll', handleScrollBtn);
+    },[])
 
     const toggleNavbar = () => {
         setIsOpen(!isOpen);
       };
+
+
   return (
-    <header id='navbar' className=' bg-green-950 fixed w-full top-0 left-0 z-50'>
+    <header id='navbar' className={`bg-green-950 ${isVisible? 'border-b border-yellow-500': "border-none"} fixed w-full top-0 left-0 z-50`}>
         <nav className='container flex items-center justify-between h-16 sm:h-20'>
             {/* website name */}
             <div className='font-lobster sm:text-2xl'>Indoor Plants</div>
@@ -16,16 +38,16 @@ const Navber = () => {
             <div id='nave-menu' className={`absolute top-0 ${isOpen? "left-0" : "left-[-100%]"} min-h-[80vh] w-full bg-green-950/80 backdrop-blur-sm flex items-center justify-center duration-300 overflow-hidden lg:static lg:min-h-fit lg:bg-transparent lg:w-auto`}>
                 <ul className='flex flex-col items-center gap-8 lg:flex-row'>
                     <li>
-                        <a href="#" className={`${isOpen ? "left-[-100%]" : "left-0"}`} onClick={toggleNavbar}>Home</a>
+                        <a href="#home" className={`${isOpen ? "left-[-100%]" : "left-0"} active:text-yellow-500`} onClick={toggleNavbar}>Home</a>
                     </li>
                     <li>
-                        <a href="#" className={`${isOpen ? "left-[-100%]" : "left-0"}`} onClick={toggleNavbar}>About</a>
+                        <a href="#aboutUs" className={`${isOpen ? "left-[-100%]" : "left-0"} active:text-yellow-500`} onClick={toggleNavbar}>About</a>
                     </li>
                     <li>
-                        <a href="#" className={`${isOpen ? "left-[-100%]" : "left-0"}`} onClick={toggleNavbar}>Popular</a>
+                        <a href="#popular" className={`${isOpen ? "left-[-100%]" : "left-0"} active:text-yellow-500`} onClick={toggleNavbar}>Popular</a>
                     </li>
                     <li>
-                        <a href="#" className={`${isOpen ? "left-[-100%]" : "left-0"}`} onClick={toggleNavbar}>Review</a>
+                        <a href="#review" className={`${isOpen ? "left-[-100%]" : "left-0"} active:text-yellow-500`} onClick={toggleNavbar}>Review</a>
                     </li>
                 </ul>
                  {/* leafs */}

@@ -1,10 +1,28 @@
 
+import { useEffect } from "react";
 import homePlant from "../../assets/img/home.png" 
+import ScrollReveal from  "scrollreveal";
 
-const Home = () => {
+const Home : React.FC = () => {
+
+    useEffect(() => {
+        // Initialize ScrollReveal
+        const sr = ScrollReveal({
+          distance: '50px',
+          duration: 1000,
+          delay: 200,
+          reset: true, // Animation will repeat on scroll
+        });
+    
+        // Target elements for reveal
+        sr.reveal('.reveal', { origin: 'top' });
+        sr.reveal('.image', { origin: 'right' ,delay: "500" ,scale : "0.5" });
+      }, []);
+
+
   return (
-    <section id="home" className='relative'>
-        <div className=' container'>
+    <section id="home" className='reveal relative'>
+        <div className='container'>
             {/* blob1 */}
             <div className=' w-64 h-64 bg-green-900 rounded-full blur-2xl -z-10 opacity-40 absolute top-1/2 left-1/2 transform -translate-x-1/2
             -translate-y-1/2 '>
@@ -46,7 +64,7 @@ const Home = () => {
                     </div>
                 </div>
                 {/* image */}
-                <div className=' w-full relative lg:w-1/2'>
+                <div className='image w-full relative lg:w-1/2'>
                     <img src={homePlant} alt='home plant image'></img>
                     {/* leaf */}
                     <div className=' absolute -top-0 right-0 opacity-30 animate-movingY'><i className='ri-leaf-line sm:text-4xl text-6xl text-yellow-300'></i></div>
